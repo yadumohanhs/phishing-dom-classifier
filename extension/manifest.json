@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard: Real-Time DOM Phishing Detector",
+  "version": "1.0.0",
+  "description": "Analyzes live DOM trees and URLs using LightGBM + heuristics to block zero-day phishing.",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
